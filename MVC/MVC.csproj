@@ -180,6 +180,7 @@
     <Compile Include="Controllers\GradController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KupacController.cs" />
+    <Compile Include="Controllers\KupciPublicController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="DAL\DBContext.Context.cs">
       <AutoGen>True</AutoGen>
@@ -316,10 +317,12 @@
     <Content Include="Views\Grad\ViewRacuni.cshtml" />
     <Content Include="Views\Drzava\Create.cshtml" />
     <Content Include="Views\Grad\DetailsRacun.cshtml" />
+    <Content Include="Views\Kupac\Action.cshtml" />
+    <Content Include="Views\KupciPublic\Index.cshtml" />
+    <Content Include="Views\KupciPublic\IndexAdmin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Kupac\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

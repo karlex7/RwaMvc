@@ -7,16 +7,17 @@ using System.Web.Mvc;
 
 namespace MVC.Controllers
 {
-    public class KupacController : Controller
+    public class KupciPublicController : Controller
     {
         Repo repo = new Repo();
+        // GET: KupciPublic
         public ActionResult Index()
         {
             if (User.IsInRole("administrator"))
             {
-                return Content("Ulazi");
+                return View("IndexAdmin",repo.GetKupacs());
             }
-            return Content("Nelazi");
+            return View(repo.GetKupacs());
         }
     }
 }
