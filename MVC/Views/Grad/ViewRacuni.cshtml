@@ -1,0 +1,66 @@
+﻿@model IEnumerable<MVC.DAL.Racun>
+
+@{
+    ViewBag.Title = "ViewRacuni";
+}
+
+<h2>ViewRacuni</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.ActionLink("Datum", "ViewRacuni",new { sortBy = "Date desc" })
+        </th>
+        <th>
+            BrojRacuna
+        </th>
+        <th>
+            @Html.ActionLink("Komrecijalist", "ViewRacuni",new { sortBy = "Komprecijalist" })
+        </th>
+        <th>
+            Kupac
+        </th>
+        <th>
+            @Html.ActionLink("Tip Kreditne Kartice", "ViewRacuni",new { sortBy = "KreditnaTip" })
+        </th>
+        <th>
+            Broj Kreditne Kartice
+        </th>
+        <th>
+
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        if (item.KupacID==ViewBag.IDKupac)
+        {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DatumIzdavanja)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BrojRacuna)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Komercijalist.Ime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Kupac.Ime)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.KreditnaKartica.Tip)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.KreditnaKartica.Broj)
+        </td>
+        <td>
+            @Html.ActionLink("Detalji", "DetailsRacun", new { id = item.IDRacun })
+        </td>
+    </tr>
+        }
+
+    }
+
+</table>
