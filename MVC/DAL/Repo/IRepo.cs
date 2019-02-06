@@ -16,5 +16,8 @@ namespace MVC.DAL.Repo
         IEnumerable<KreditnaKartica> GetKreditnaKarticas();
         IEnumerable<Stavka> GetStavkas();
         void InsertDrzava(Drzava drzava);
+        void EditKupac(Kupac k);
+        Kupac GetKupac(int id);
+        void save();
     }
 }

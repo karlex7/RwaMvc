@@ -179,7 +179,6 @@
     <Compile Include="Controllers\DrzavaController.cs" />
     <Compile Include="Controllers\GradController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\KupacController.cs" />
     <Compile Include="Controllers\KupciPublicController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="DAL\DBContext.Context.cs">
@@ -234,6 +233,7 @@
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\KupacViewModel.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -317,9 +317,9 @@
     <Content Include="Views\Grad\ViewRacuni.cshtml" />
     <Content Include="Views\Drzava\Create.cshtml" />
     <Content Include="Views\Grad\DetailsRacun.cshtml" />
-    <Content Include="Views\Kupac\Action.cshtml" />
     <Content Include="Views\KupciPublic\Index.cshtml" />
     <Content Include="Views\KupciPublic\IndexAdmin.cshtml" />
+    <Content Include="Views\KupciPublic\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
