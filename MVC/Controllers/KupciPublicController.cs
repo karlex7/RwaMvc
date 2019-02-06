@@ -23,16 +23,24 @@ namespace MVC.Controllers
         }
         public ActionResult Edit(int id)
         {
-            KupacViewModel viewModel = new KupacViewModel
+            if (User.IsInRole("administrator"))
             {
-                Kupac = repo.GetKupac(id),
-                GetGrads = repo.GetGrads()
-            };
-            return View(viewModel);
+                KupacViewModel viewModel = new KupacViewModel
+                {
+                    Kupac = repo.GetKupac(id),
+                    GetGrads = repo.GetGrads()
+                };
+                return View(viewModel);
+            }
+            return Redirect("/KupciPublic/Index");
         }
         [HttpPost]
         public ActionResult Save(KupacViewModel viewModel)
         {
+            if (!ModelState.IsValid)
+            {
+                return Redirect("Index");
+            }
             var kupacDB = repo.GetKupac(viewModel.Kupac.IDKupac);
             kupacDB.Ime = viewModel.Kupac.Ime;
             kupacDB.Prezime = viewModel.Kupac.Prezime;

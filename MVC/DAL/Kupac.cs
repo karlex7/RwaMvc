@@ -9,9 +9,11 @@
 
 namespace MVC.DAL
 {
+    using MVC.Models;
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Kupac
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,10 +23,18 @@ namespace MVC.DAL
         }
     
         public int IDKupac { get; set; }
+        [Required]
+        [Min3CharName]
         public string Ime { get; set; }
+        [Required]
         public string Prezime { get; set; }
+        [Required]
+        [EmailAddress]
         public string Email { get; set; }
+        [Required]
         public string Telefon { get; set; }
+        [Required]
+        [Display(Name ="Grad")]
         public Nullable<int> GradID { get; set; }
     
         public virtual Grad Grad { get; set; }
